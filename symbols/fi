@@ -357,3 +357,21 @@ xkb_symbols "fidvorak" {
 
     include "level3(ralt_switch)"
 };
+
+
+// Implementation of arkkudvorak-style character placement in ISO keyboards
+partial alphanumeric_keys
+xkb_symbols "arkkudvorak" {
+
+    	name[Group1]= "Finnish (Arkkudvorak excluding AltGr binds)";
+	include "us(dvorak-intl)"
+
+    	key <LSGT> { [ 	adiaeresis,	odiaeresis,	   aring,		Aring			] };
+
+	key <AC01> { [  a,              A,                Adiaeresis,		Adiaeresis		] };
+	key <AC02> { [  o,              O,                Odiaeresis,		Odiaeresis		] };
+
+	key <AD01> { [	dead_acute, 	dead_diaeresis,   apostrophe,        	quotedbl ] };
+	key <AD01> { [	apostrophe, 	quotedbl,   	  dead_acute,        	dead_diaeresis ] };
+
+};
